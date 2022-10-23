@@ -40,5 +40,26 @@ class WithWithoutLambdaTest {
     void fourTwoParamLambda() {
         WithWithoutLambda.fourTwoParamLambda();
     }
+    @Test
+    void fiveForEachLoop() {
+        WithWithoutLambda.fiveForEachLoop();
+    }
+    @Test
+    void sixMultipleStatements() {
+        WithWithoutLambda.sixMultipleStatements();
+    }
 
+    @Test
+    void sevenThreadInLambda() {
+        WithWithoutLambda.sevenThreadInLambda();
+    }
+
+    @Test
+    void eightComparatorWithLambda() {
+        WithWithoutLambda.eightComparatorWithLambda();
+    }
+    @Test
+    void nineFilterCollectionData() {
+        WithWithoutLambda.nineFilterCollectionData();
+    }
 }
