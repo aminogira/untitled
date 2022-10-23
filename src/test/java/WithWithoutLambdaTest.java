@@ -62,4 +62,9 @@ class WithWithoutLambdaTest {
     void nineFilterCollectionData() {
         WithWithoutLambda.nineFilterCollectionData();
     }
+
+    @Test
+    void tenLambdaEventListenter() {
+        WithWithoutLambda.tenLambdaEventListenter();
+    }
 }
