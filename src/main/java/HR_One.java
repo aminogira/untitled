@@ -14,6 +14,7 @@ public class HR_One {
 			ll.addFirst(ll.removeLast());
     	}
     	int[] list = ll.stream().mapToInt(i->i).toArray();
+		System.out.println(" roteted "  + Arrays.toString(list));
     	for(int x=0;x<qry.length;x++) {
     		qry[x]=list[qry[x]];
     	}
