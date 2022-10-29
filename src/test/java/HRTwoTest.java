@@ -1,5 +1,10 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class HRTwoTest {
@@ -68,6 +73,51 @@ class HRTwoTest {
         assertEquals(0,ans);
     }
 
+    @Test
+    public void testlibraryFine01() {
+        int ans= HRTwo.libraryFine(14, 7, 2018, 5, 7, 2018);
+        assertEquals(135,ans);
+    }
 
+    @Test
+    public void testlibraryFine02() {
+        int ans= HRTwo.libraryFine(28, 2, 2015, 15, 4, 2015);
+        assertEquals(0,ans);
+    }
+
+    @Test
+    public void testlibraryFine03() {
+        int ans= HRTwo.libraryFine(2, 7, 1014, 1, 1, 1015);
+        assertEquals(0,ans);
+    }
+
+    @Test
+    public void testlibraryFine04() {
+        int ans= HRTwo.libraryFine(15, 7, 2014, 1, 7, 2015);
+        assertEquals(0,ans);
+    }
+
+
+    @Test
+    public void testcutTheSticks01() {
+        int inArr[]={5, 4, 4, 2, 2, 8};
+        List<Integer> input = Arrays.stream(inArr).boxed().collect(Collectors.toList());
+        System.out.println(input);
+        List ans = HRTwo.cutTheSticks(input);
+        int expectedArr[]={6, 4, 2, 1};
+        List<Integer> expected = Arrays.stream(expectedArr).boxed().collect(Collectors.toList());
+        assertTrue(expected.equals(ans));
+    }
+
+    @Test
+    public void testcutTheSticks02() {
+        int inArr[]={1, 2, 3, 4, 3, 3, 2, 1};
+        List<Integer> input = Arrays.stream(inArr).boxed().collect(Collectors.toList());
+        System.out.println(input);
+        List ans = HRTwo.cutTheSticks(input);
+        int expectedArr[]={8, 6, 4, 1};
+        List<Integer> expected = Arrays.stream(expectedArr).boxed().collect(Collectors.toList());
+        assertTrue(expected.equals(ans));
+    }
 
 }

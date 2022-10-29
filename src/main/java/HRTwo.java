@@ -1,4 +1,9 @@
 import java.math.BigInteger;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class HRTwo {
     public static int findDigits(int n) {
@@ -87,4 +92,48 @@ public class HRTwo {
         }
         return ans;
     }
+
+
+    public static int libraryFine(int d1, int m1, int y1, int d2, int m2, int y2) {
+        int ans=0;
+
+        if(y1==y2 && m1==m2 && d1>d2){
+            int nDays=d1-d2;
+            ans = nDays*15;
+        }else if(y1==y2 && m1>m2){
+            int nMonth = m1 - m2;
+            ans = nMonth * 500;
+        }else if(y1>y2) {
+            ans = 10000;
+        }
+        return ans;
+    }
+
+
+    public static List<Integer> cutTheSticks(List<Integer> arr) {
+        List out=new LinkedList<Integer>();
+        LinkedList<Integer> ll = new LinkedList<Integer>(arr);
+        Collections.sort(ll);
+        while(ll.size()>0){
+            int nCut=0;
+            int min=ll.get(0);
+            for (int i = 0; i < ll.size(); i++) {
+                int len=ll.get(i);
+                if(len>min){
+                    len = len -min;
+                    ll.remove(i);
+                    ll.add(i,len);
+                    nCut++;
+                }else{
+                    ll.remove(i);
+                    i--;
+                    nCut++;
+                }
+            }
+            out.add(nCut);
+        }
+        return out;
+    }
+
+
 }
