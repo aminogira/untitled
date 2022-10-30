@@ -23,6 +23,8 @@ public class HR_One {
     }
 
 
+
+
 	public static List<Integer> circularArrayRotationOrigi(List<Integer> a, int k, List<Integer> queries) {
 		int[] qry = queries.stream().mapToInt(j->j).toArray();
 		k=a.size()%k;
