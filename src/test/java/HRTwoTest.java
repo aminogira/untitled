@@ -100,22 +100,22 @@ class HRTwoTest {
 
     @Test
     public void testcutTheSticks01() {
-        int inArr[]={5, 4, 4, 2, 2, 8};
+        int[] inArr ={5, 4, 4, 2, 2, 8};
         List<Integer> input = Arrays.stream(inArr).boxed().collect(Collectors.toList());
         System.out.println(input);
         List ans = HRTwo.cutTheSticks(input);
-        int expectedArr[]={6, 4, 2, 1};
+        int[] expectedArr ={6, 4, 2, 1};
         List<Integer> expected = Arrays.stream(expectedArr).boxed().collect(Collectors.toList());
         assertTrue(expected.equals(ans));
     }
 
     @Test
     public void testcutTheSticks02() {
-        int inArr[]={1, 2, 3, 4, 3, 3, 2, 1};
+        int[] inArr ={1, 2, 3, 4, 3, 3, 2, 1};
         List<Integer> input = Arrays.stream(inArr).boxed().collect(Collectors.toList());
         System.out.println(input);
         List ans = HRTwo.cutTheSticks(input);
-        int expectedArr[]={8, 6, 4, 1};
+        int[] expectedArr ={8, 6, 4, 1};
         List<Integer> expected = Arrays.stream(expectedArr).boxed().collect(Collectors.toList());
         assertTrue(expected.equals(ans));
     }

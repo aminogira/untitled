@@ -205,12 +205,12 @@ interface Addable{
 }
 
 interface Talkable{
-    public String talk(String name);
+    String talk(String name);
 }
 interface Sayable{
-    public String say();
+    String say();
 }
 
 interface Drowable{
-    public void draw();
+    void draw();
 }

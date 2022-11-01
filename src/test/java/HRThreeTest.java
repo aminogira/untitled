@@ -8,11 +8,36 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class HRThreeTest {
 
+    //https://www.hackerrank.com/challenges/taum-and-bday/problem?isFullScreen=true
+
+    @Test
+    public void testeminimumDistances01() {
+        int[] input = {7, 1, 3 ,4 ,1 ,7 };
+        List<Integer> in = Arrays.stream(input).boxed().collect(Collectors.toList());
+        int ans= HRThree.minimumDistances(in);
+        assertEquals(3,ans);
+    }
+
+    @Test
+    public void testeminimumDistances02() {
+        int[] input = {3,2,1,2,3 };
+        List<Integer> in = Arrays.stream(input).boxed().collect(Collectors.toList());
+        int ans= HRThree.minimumDistances(in);
+        assertEquals(2,ans);
+    }
+
+    @Test
+    public void testequalizeArray02() {
+        int[] input = {1, 2, 3, 1, 2, 3, 3, 3};
+        List<Integer> in = Arrays.stream(input).boxed().collect(Collectors.toList());
+        int ans= HRThree.equalizeArray(in);
+        assertEquals(4,ans);
+    }
 
     @Test
     public void testequalizeArray01() {
 
-        int input[]= {3, 3, 2 ,1 ,3};
+        int[] input = {3, 3, 2 ,1 ,3};
         List<Integer> in = Arrays.stream(input).boxed().collect(Collectors.toList());
         int ans= HRThree.equalizeArray(in);
         assertEquals(2,ans);
@@ -35,14 +60,14 @@ class HRThreeTest {
 
     @Test
     public void testjumpingOnCloudsGame01() {
-        int input[]= {0, 0, 1, 0, 0, 1, 0};
+        int[] input = {0, 0, 1, 0, 0, 1, 0};
         List<Integer> in = Arrays.stream(input).boxed().collect(Collectors.toList());
         int ans= HRThree.jumpingOnClouds(in);
         assertEquals(4,ans);
     }
     @Test
     public void testjumpingOnCloudsGame02() {
-        int input[]= {0, 0, 0, 0, 1, 0};
+        int[] input = {0, 0, 0, 0, 1, 0};
         List<Integer> in = Arrays.stream(input).boxed().collect(Collectors.toList());
         int ans= HRThree.jumpingOnClouds(in);
         assertEquals(3,ans);
@@ -50,7 +75,7 @@ class HRThreeTest {
 
     @Test
     public void testjumpingOnCloudsGame03() {
-        int input[]= {0,1,0,0,0,1,0};
+        int[] input = {0,1,0,0,0,1,0};
         List<Integer> in = Arrays.stream(input).boxed().collect(Collectors.toList());
         int ans= HRThree.jumpingOnClouds(in);
         assertEquals(3,ans);
@@ -59,7 +84,7 @@ class HRThreeTest {
 
     @Test
     public void testjumpingOnCloudsGame04() {
-        int input[]= {0, 0, 0, 1, 0, 0};
+        int[] input = {0, 0, 0, 1, 0, 0};
         List<Integer> in = Arrays.stream(input).boxed().collect(Collectors.toList());
         int ans= HRThree.jumpingOnClouds(in);
         assertEquals(3,ans);
@@ -67,21 +92,21 @@ class HRThreeTest {
 
     @Test
     public void testjumpingOnClouds01() {
-        int c[]={0, 0, 1, 0, 0, 1, 1, 0};
+        int[] c ={0, 0, 1, 0, 0, 1, 1, 0};
         int ans= HRThree.jumpingOnClouds(c, 2);
         assertEquals(92,ans);
     }
 
     @Test
     public void testjumpingOnClouds02() {
-        int c[]={1, 1, 1, 0, 1, 1, 0, 0, 0, 0};
+        int[] c ={1, 1, 1, 0, 1, 1, 0, 0, 0, 0};
         int ans= HRThree.jumpingOnClouds(c, 3);
         assertEquals(80,ans);
     }
 
     @Test
     public void testjumpingOnClouds03() {
-        int c[]={0,0,1,0};
+        int[] c ={0,0,1,0};
         int ans= HRThree.jumpingOnClouds(c, 2);
         assertEquals(96,ans);
     }

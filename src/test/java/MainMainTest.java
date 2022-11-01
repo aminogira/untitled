@@ -27,7 +27,7 @@ class MainMainTest {
     @Test
     void saveThePrisoner04() {
 
-        int dataset[][]={{3,394274638,3},
+        int[][] dataset ={{3,394274638,3},
             {7,615562705,2},
             {2,739424390,2},
             {654809340,204894365,472730208},
@@ -129,7 +129,7 @@ class MainMainTest {
             {8,117991680,2}
         };
 
-        int ans[]={3,
+        int[] ans ={3,
             3,
             1,
             22815232,

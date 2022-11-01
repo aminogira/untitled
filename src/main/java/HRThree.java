@@ -1,10 +1,52 @@
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class HRThree {
 
+
+
+
+    public static int minimumDistances(List<Integer> a) {
+        int ans=-1;
+        int distance=99999999;
+        LinkedList<Integer> al=new LinkedList<Integer>(a);
+        for(int x=0;x<al.size();x++){
+            int num=al.get(x);
+            for (int y = x+1; y < al.size(); y++) {
+                if(num == al.get(y)){
+                    if(y-x<distance)distance=y-x;
+                }
+            }
+        }
+        if(distance!=99999999)
+            ans=distance;
+        return ans;
+    }
+
+
+//    public static List<Integer> acmTeam(List<String> topic) {
+//        // Write your code here
+//
+//
+//
+//    }
+
     public static int equalizeArray(List<Integer> arr) {
+        List<Integer> distinctInts=arr.stream().distinct().collect(Collectors.toList());
+        int maxfreq=0;
+        for(int i=0;i<distinctInts.size();i++)
+        {
+            int freq=Collections.frequency(arr, distinctInts.get(i));
+            if(freq>maxfreq)
+                maxfreq=freq;
+        }
+        return arr.size()-maxfreq;
+    }
+
+
+    public static int equalizeArrayOld(List<Integer> arr) {
         int ans=0;
         Collections.sort(arr);
         for (int i = 0; i < arr.size(); i++) {
@@ -13,8 +55,10 @@ public class HRThree {
                 while( i+1<= arr.size() && (a==arr.get(i)) ){
                     arr.remove(i);
                 }
+                i=-1;
             }
         }
+        System.out.println(arr);
         return arr.size();
     }
 

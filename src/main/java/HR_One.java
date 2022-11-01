@@ -1,11 +1,45 @@
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class HR_One {
-    public static List<Integer> circularArrayRotation(List<Integer> a, int k, List<Integer> queries) {
+
+	public static long taumBday(int b, int w, int bc, int wc, int z) {
+		long totCost=0;
+		long lb=b; long lw=w; long lbc=bc; long lwc=wc; long lz=z;
+		long diff=Math.abs(lbc-lwc);
+		if(diff>lz){
+			if(lbc>lwc)
+				totCost=lwc*lw + lb*(lwc+lz);
+			else
+				totCost=lbc*lb + lw*(lbc+lz);
+		}else{
+			totCost=lb*lbc+lw*lwc;
+		}
+		return totCost;
+	}
+
+
+
+
+	public static List<Integer> circularArrayRotation(List<Integer> a, int k, List<Integer> queries) {
+		List <Integer> lstTmt=new ArrayList<>();
+		List <Integer> output=new ArrayList<>();
+		k=k%a.size();
+		if(k%a.size()==0){
+			for(int i=k;i<a.size();i++) lstTmt.add(a.get(i));
+		}else{
+			k=a.size()-k;
+			for(int i=k;i<a.size();i++) lstTmt.add(a.get(i));
+			for(int i=0;i<k;i++) lstTmt.add(a.get(i));
+		}
+		for(int i=0;i<queries.size();i++)
+			output.add(lstTmt.get(queries.get(i)));
+		return output;
+	}
+
+
+
+    public static List<Integer> circularArrayRotationOld2(List<Integer> a, int k, List<Integer> queries) {
     	int[] qry = queries.stream().mapToInt(j->j).toArray();
     	if(k>a.size())	k=a.size()%k + 1;
     	if(k==0)k=a.size();
