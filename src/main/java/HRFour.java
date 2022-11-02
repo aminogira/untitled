@@ -1,4 +1,83 @@
+import java.util.List;
+
 public class HRFour {
+
+    static int flatlandSpaceStations(int n, int[] c) {
+        int ans=0;
+        for(int i=0;i<n;i++){
+            int min=999999999;
+            for(int j:c){
+                int d=Math.abs(i-j);
+                if(d<min)min=d;
+            }
+            if(min>ans)ans=min;
+        }
+        return ans;
+    }
+
+
+
+
+    public static int workbook(int n, int k, List<Integer> arr) {
+        int ans=0;
+        int ar[]=arr.stream().mapToInt(z->z).toArray();
+        int page=1;
+        for(int c=0;c<ar.length;c++){
+            int probInPage=0;
+            for(int p=1;p<=ar[c];p++){
+                probInPage++;
+                if(probInPage>k){
+                    page++;
+                    probInPage=1;
+                }
+                if(page==p){
+                    ans++;
+                }
+            }
+            page++;
+        }
+        return ans;
+    }
+
+    public static int workbookOrigi(int n, int k, List<Integer> arr) {
+        int ans=0;
+        int ar[]=arr.stream().mapToInt(z->z).toArray();
+        int page=1;
+        for(int c=0;c<ar.length;c++){
+            int probInPage=0;
+            for(int p=1;p<=ar[c];p++){
+                probInPage++;
+                if(probInPage>k){
+                    page++;
+                    System.out.println("-------------");
+                    probInPage=1;
+                }
+                if(page==p){
+                    ans++;
+                }
+                System.out.print(  "\t" + c + "::" + p + "(" + page + ")");
+            }
+            page++;
+            System.out.println("==============");
+        }
+        return ans;
+    }
+
+
+    public static int beautifulTriplets(int d, List<Integer> arr) {
+        int ans=0;
+        int ar[]=arr.stream().mapToInt(k->k).toArray();
+        for(int i=0;i<ar.length;i++){
+            for(int j=i+1;j<ar.length-1;j++){
+                if(ar[j]-ar[i]==d){
+                    for(int k=j+1;k<ar.length;k++){
+                        if(ar[k]-ar[j]==d)ans++;
+                    }
+                }
+            }
+        }
+        return ans;
+    }
 
     public static int howManyGames(int p, int d, int m, int s) {
         int ans=0;
