@@ -4,6 +4,49 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class HRFourTest {
     @Test
+    public void testhowManyGames01() {
+        int ans=HRFour.howManyGames(20,3,6,70);
+        assertEquals(5,ans);
+    }
+    @Test
+    public void testhowManyGames02() {
+        int ans=HRFour.howManyGames(20,3,6,80);
+        assertEquals(6,ans);
+    }
+    @Test
+    public void testhowManyGames03() {
+        int ans=HRFour.howManyGames(20,3,6,85);
+        assertEquals(7,ans);
+    }
+
+    @Test
+    public void testkaprekarNumbers01() {
+        HRFour.kaprekarNumbers(1,100);
+        System.out.println();
+        //assertEquals(true,ans);
+    }
+    @Test
+    public void testkaprekarNumbers03() {
+        HRFour.kaprekarNumbers(1,99999);
+        System.out.println();
+        //assertEquals(true,ans);
+    }
+
+    @Test
+    public void testkaprekarNumbers04() {
+        HRFour.kaprekarNumbers(22222,99999);
+        System.out.println();
+        //assertEquals(true,ans);
+    }
+
+    @Test
+    public void testkaprekarNumbers02() {
+        HRFour.kaprekarNumbers(10,40);
+        System.out.println();
+        //assertEquals(true,ans);
+    }
+
+    @Test
     public void testchocolateFeast01() {
         int ans=HRFour.chocolateFeast(10,2,5);
         assertEquals(6,ans);
